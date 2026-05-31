@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Sudoku Privacy Policy</title>
+  <style>
+    :root {
+      --bg: #f8f9fa;
+      --text: #1f2937;
+      --primary: #0ea5e9;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.7;
+      max-width: 860px;
+      margin: 40px auto;
+      padding: 0 20px;
+      color: var(--text);
+      background: var(--bg);
+    }
+    h1, h2, h3 { color: #111827; }
+    h1 { font-size: 2rem; border-bottom: 3px solid var(--primary); padding-bottom: 12px; }
+    h2 { font-size: 1.35rem; margin-top: 2.2em; border-bottom: 1px solid #e5e7eb; padding-bottom: 6px; }
+    h3 { font-size: 1.1rem; margin-top: 1.6em; }
+    .meta { color: #6b7280; font-size: 0.95rem; margin-bottom: 2rem; }
+    ul, ol { padding-left: 1.4em; }
+    li { margin: 0.4em 0; }
+    .highlight { background: #fefce8; padding: 2px 6px; border-radius: 3px; }
+    .footer { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid #e5e7eb; font-size: 0.9rem; color: #6b7280; }
+    .note { background: #f0f9ff; border-left: 4px solid var(--primary); padding: 1rem 1.2rem; margin: 1.5rem 0; border-radius: 6px; }
+    a { color: var(--primary); }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #111827; --text: #e5e7eb; }
+      h1, h2, h3 { color: #f3f4f6; }
+      .note { background: #1e3a5f; }
+      .footer { border-color: #374151; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Daily Sudoku Privacy Policy</h1>
+  
+  <div class="meta">
+    <strong>Effective Date:</strong> May 31, 2026<br>
+    <strong>Last Updated:</strong> May 31, 2026
+  </div>
+
+  <p>Daily Sudoku ("<strong>App</strong>", "<strong>we</strong>", "<strong>us</strong>", or "<strong>our</strong>") is a free puzzle game developed by Biscuit Apps. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application ("<strong>Daily Sudoku</strong>") on Android devices via the Google Play Store.</p>
+
+  <p>Please read this Privacy Policy carefully. By using the App, you agree to the collection and use of information in accordance with this Policy. If you do not agree, please do not use the App.</p>
+
+  <h2>1. Information We Collect</h2>
+  <p>We collect information to provide and improve the core gameplay experience (daily puzzles, leaderboards, progress tracking, and optional premium subscriptions). We do <strong>not</strong> use advertising SDKs, analytics trackers (such as Firebase Analytics), or crash reporting tools (such as Crashlytics).</p>
+
+  <h3>1.1 Information from Google Sign-In (Optional)</h3>
+  <p>If you choose to sign in with Google:</p>
+  <ul>
+    <li>Email address</li>
+    <li>Display name</li>
+    <li>Profile photo URL</li>
+    <li>Google account identifier (via Firebase Authentication UID)</li>
+  </ul>
+  <p>Sign-in is <strong>optional</strong>. You can use the App fully (including anonymous leaderboard submissions) without signing in.</p>
+
+  <h3>1.2 Pseudonymous Device Identifier ("Install ID")</h3>
+  <ul>
+    <li>We generate and store a random, unique identifier (UUID v4) on your device using local storage.</li>
+    <li>This Install ID is sent with game completion submissions to prevent duplicate entries and enable anonymous leaderboard functionality.</li>
+    <li>The Install ID is <strong>rotated</strong> (replaced with a new one) after you sign in, so future anonymous play on the same device cannot be linked to your account.</li>
+    <li>This identifier is <strong>not</strong> tied to any advertising ID, hardware serial, or personally identifiable device information.</li>
+  </ul>
+
+  <h3>1.3 Gameplay and Performance Data</h3>
+  <ul>
+    <li><strong>Completed puzzle results</strong>: For each daily puzzle you finish, we record:
+      <ul>
+        <li>Completion time (in seconds)</li>
+        <li>Number of errors</li>
+        <li>Difficulty level</li>
+        <li>Puzzle date</li>
+        <li>Optional board hash (for basic integrity checking)</li>
+      </ul>
+    </li>
+    <li>These records are stored in our database and associated with either your Install ID (if playing anonymously) or your user ID (after signing in or via backfill of prior anonymous entries).</li>
+    <li><strong>In-progress game state</strong>: Current board layout, notes, elapsed time, and error count for active puzzles are saved <strong>only locally</strong> on your device using SharedPreferences. This data is never transmitted to our servers.</li>
+    <li><strong>History</strong>: Once signed in, you can view your personal best completion history for past daily puzzles (retrieved from your linked leaderboard entries).</li>
+  </ul>
+  <p>Leaderboard entries (times and errors) are <strong>publicly readable</strong> so that all players can view rankings. No names, emails, or profile information are displayed on public leaderboards.</p>
+
+  <h3>1.4 Subscription and Purchase Information</h3>
+  <p>The App offers optional premium subscriptions ("Daily Sudoku Premium") via monthly and annual plans. All billing is handled exclusively by Google Play Billing.</p>
+  <p>When you purchase or restore a subscription:</p>
+  <ul>
+    <li>We receive a purchase token from Google Play.</li>
+    <li>The purchase token (along with the product ID) is sent <strong>only to our secure Cloud Function</strong> for verification against the Google Play Developer API.</li>
+    <li>On our servers we store a mapping of the purchase token to your Firebase UID, along with basic subscription state (active/expired, expiry time) provided by Google.</li>
+    <li>Your user profile is updated with subscription entitlement status (premium tier, status, and expiry date).</li>
+    <li>Real-time subscription updates (cancellations, renewals, grace periods) are received via Google Play Real-time Developer Notifications and used solely to keep your entitlement status accurate.</li>
+  </ul>
+  <p>We do <strong>not</strong> receive or store your full payment details, credit card information, or Google Play account credentials. Google handles all financial transactions.</p>
+
+  <h3>1.5 Preference Data</h3>
+  <ul>
+    <li>Theme settings (selected color scheme and light/dark/system mode).</li>
+    <li>These are stored locally and, if you are signed in, synced to your user profile so they follow you across devices.</li>
+  </ul>
+
+  <h3>1.6 Technical and Usage Information</h3>
+  <ul>
+    <li>Timestamps (e.g., last seen, submission times).</li>
+    <li>Basic app version and platform information implicitly collected by Firebase services for operation and security.</li>
+  </ul>
+  <p>We do not collect precise location, contacts, photos (beyond your optional Google profile photo), microphone, camera, or any other sensitive device permissions. The App declares no special Android permissions beyond those required for normal internet connectivity and Google Play services.</p>
+
+  <h2>2. How We Use Your Information</h2>
+  <p>We use the collected information for the following purposes:</p>
+  <ul>
+    <li>Deliver daily Sudoku puzzles and core gameplay features.</li>
+    <li>Maintain accurate, cheat-resistant leaderboards and personal history.</li>
+    <li>Provide cross-device access to your completion history and theme preferences when signed in.</li>
+    <li>Verify, activate, and maintain premium subscription entitlements (required for Google Play compliance).</li>
+    <li>Backfill anonymous leaderboard entries to your account upon sign-in (so your past play is attributed to you).</li>
+    <li>Improve the App (e.g., understanding popular difficulties or submission patterns at an aggregate level).</li>
+    <li>Enforce security rules and prevent abuse of public leaderboards.</li>
+    <li>Communicate with you (if you contact support).</li>
+  </ul>
+
+  <h2>3. Legal Bases for Processing (EEA/UK Users)</h2>
+  <p>If you are in the European Economic Area, United Kingdom, or Switzerland, our legal bases for processing include:</p>
+  <ul>
+    <li>Performance of a contract (providing the game and premium features you request).</li>
+    <li>Legitimate interests (operating leaderboards, preventing fraud, improving the service).</li>
+    <li>Consent (when you voluntarily sign in with Google or make a purchase).</li>
+  </ul>
+
+  <h2>4. Sharing and Disclosure of Information</h2>
+  <p>We do <strong>not</strong> sell your personal information.</p>
+  <p>We share information only in the following limited circumstances:</p>
+  <ul>
+    <li><strong>Google Services (necessary for App functionality)</strong>:
+      <ul>
+        <li>Firebase Authentication, Cloud Firestore, and Cloud Functions (Google LLC) — for user accounts, storing profiles, leaderboard data, and subscription verification.</li>
+        <li>Google Sign-In — for authentication.</li>
+        <li>Google Play Billing and Android Publisher API — for in-app purchases and Real-time Developer Notifications.</li>
+      </ul>
+    </li>
+    <li><strong>Legal Requirements</strong>: We may disclose information if required by law, court order, or valid government request.</li>
+    <li><strong>Business Transfers</strong>: In the unlikely event of a merger, acquisition, or asset sale, user information may be transferred as part of the transaction.</li>
+    <li><strong>Public Leaderboards</strong>: Puzzle completion times and error counts are publicly visible (associated only with an opaque identifier or your internal user ID; no names are shown).</li>
+  </ul>
+  <p>We do not share data with data brokers, advertising networks, or social media platforms for marketing purposes.</p>
+
+  <h2>5. Data Retention</h2>
+  <ul>
+    <li><strong>Leaderboard entries</strong>: Retained indefinitely to maintain historical rankings and allow users to view past performance.</li>
+    <li><strong>User profiles</strong>: Retained while your account is active or for a reasonable period after last activity. You can request deletion (see Section 7).</li>
+    <li><strong>Play purchase mappings</strong>: Retained for the duration of the subscription plus a reasonable period afterward to handle refunds, disputes, and re-verification.</li>
+    <li><strong>Local device data</strong> (game saves, Install ID, preferences): Deleted when you clear app data, uninstall the App, or (for Install ID) upon successful sign-in backfill rotation.</li>
+    <li><strong>Anonymous Install ID entries</strong>: Eventually become unlinked from new activity after rotation; old entries remain in leaderboards under the old ID.</li>
+  </ul>
+
+  <h2>6. Data Security</h2>
+  <p>We use industry-standard measures to protect your information:</p>
+  <ul>
+    <li>Firebase Security Rules strictly limit client access (users can only read/write their own profile; leaderboard writes are validated; purchase records are server-only).</li>
+    <li>All purchase verification occurs server-side using Google service accounts with minimal required scopes.</li>
+    <li>Communication with Firebase and Google Play uses encrypted channels (HTTPS/TLS).</li>
+    <li>No sensitive payment data ever touches our servers.</li>
+  </ul>
+  <p>Despite our efforts, no method of transmission or storage is 100% secure. You use the App at your own risk.</p>
+
+  <h2>7. Your Rights and Choices</h2>
+  
+  <h3>Account Controls</h3>
+  <ul>
+    <li><strong>Sign out</strong>: Stops new data from being associated with your Google account. Previously submitted anonymous entries remain under the rotated Install ID.</li>
+    <li><strong>Delete local data</strong>: Clear the App's cache/storage in your device settings or uninstall the App.</li>
+    <li><strong>Theme and game progress</strong>: Managed entirely locally until you sign in.</li>
+  </ul>
+
+  <h3>Access, Correction, and Deletion</h3>
+  <ul>
+    <li>You can view your linked completion history inside the App after signing in.</li>
+    <li>To request access to, correction of, or deletion of your personal data (user profile, linked leaderboard entries, purchase records), please contact us (see Section 10). We will respond within a reasonable time and in accordance with applicable law (including GDPR/CCPA/CPRA where applicable).</li>
+    <li>Note: Deleting your account will remove your user profile and subscription status. Public leaderboard entries you previously submitted will remain (anonymized or under your former user ID) as they form part of the historical record for all players. If you want specific entries removed, include that detail in your request.</li>
+  </ul>
+
+  <h3>Subscription Management</h3>
+  <ul>
+    <li>Cancel or manage subscriptions directly in the Google Play Store under your account subscriptions.</li>
+    <li>Restoring purchases is supported inside the App.</li>
+  </ul>
+
+  <h3>Opt-Out of Sign-In</h3>
+  <p>You may use every feature of the App, including submitting scores to leaderboards, without ever signing in.</p>
+
+  <h2>8. Children's Privacy</h2>
+  <p>Daily Sudoku is a general-audience puzzle game suitable for players of all ages, including children.</p>
+  <p>We do not knowingly collect personal information from children under 13 (or the applicable age of digital consent in your jurisdiction) in a way that would require parental consent under COPPA or similar laws, beyond what is strictly necessary for basic gameplay functionality.</p>
+  <ul>
+    <li>Sign-in with Google is optional and subject to Google's own age-appropriate consent flows.</li>
+    <li>No advertising or behavioral tracking occurs.</li>
+    <li>If you believe we have inadvertently collected information from a child under 13, please contact us immediately so we can delete it.</li>
+  </ul>
+
+  <h2>9. International Data Transfers</h2>
+  <p>Your information may be transferred to and processed in the United States and other countries where Google Firebase and our infrastructure providers operate. These countries may have different data protection laws than your jurisdiction. By using the App, you consent to such transfers. We rely on appropriate safeguards (such as Google's standard contractual clauses) where required.</p>
+
+  <h2>10. Contact Us</h2>
+  <p>If you have questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:</p>
+  <ul>
+    <li>Through the Google Play Store listing for Daily Sudoku (preferred for fastest response)</li>
+    <li>Email: <strong>biscuitappscontact@gmail.com</strong> (replace with your real support address before publishing)</li>
+  </ul>
+  <p>We will respond to verified requests as promptly as possible.</p>
+
+  <h2>11. Changes to This Privacy Policy</h2>
+  <p>We may update this Privacy Policy from time to time. When we do, we will revise the "Last Updated" date at the top of this document and, where appropriate, notify users via an in-App notice or updated Play Store listing.</p>
+  <p>Your continued use of the App after any changes constitutes acceptance of the revised Policy.</p>
+
+  <h2>12. Additional Information for Specific Jurisdictions</h2>
+  <ul>
+    <li><strong>California (CCPA/CPRA)</strong>: We do not sell personal information. You have the right to know what information we collect, request deletion, and opt-out of any future "sale" (we currently have none). Contact us to exercise these rights.</li>
+    <li><strong>EEA / UK / Switzerland (GDPR/UK GDPR)</strong>: You have rights to access, rectification, erasure, restriction, portability, objection, and to lodge a complaint with your local supervisory authority.</li>
+    <li><strong>Brazil (LGPD)</strong>: Similar rights apply. Contact us for requests.</li>
+  </ul>
+
+  <div class="note">
+    <strong>Summary for Google Play Store reviewers:</strong><br>
+    Daily Sudoku collects only the minimal data necessary for gameplay (optional Google profile for sign-in, pseudonymous game results for leaderboards and history, and purchase tokens solely for Google Play subscription verification). No advertising, analytics, or unnecessary tracking occurs. All sensitive operations use Google's secure services and our tightly scoped security rules.
+  </div>
+
+  <div class="footer">
+    <p><strong>Important:</strong> This document is provided as a starting point based on the App's actual code and data flows. <strong>Customize the developer name, contact email, effective date, and any additional details before making it publicly available.</strong> Host the final version at a permanent public HTTPS URL and enter that URL in the Google Play Console under <strong>App content → Privacy Policy</strong>.</p>
+    <p style="margin-top: 1.5rem;">© 2026 Biscuit Apps. All rights reserved.</p>
+  </div>
+</body>
+</html>
